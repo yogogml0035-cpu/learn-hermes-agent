@@ -307,23 +307,6 @@ python agents/s01_agent_loop.py
 
 **核心机制高保真，外围细节有取舍。**
 
-## 与 Learn Claude Code 的关键差异
-
-Hermes Agent 和 Claude Code 共享同样的 agent 范式 — 循环、工具、规划、上下文 — 但 Hermes 有独特的架构选择值得理解：
-
-| 维度 | Claude Code | Hermes Agent |
-|---|---|---|
-| 语言 | TypeScript/Node.js | Python |
-| 循环风格 | 异步流式 | 同步 + 异步桥接 |
-| 持久化 | 文件系统 Memory | SQLite + FTS5 全文搜索 |
-| 多平台 | 仅 CLI | 15+ 平台适配器 via Gateway |
-| 终端 | 本地 Shell | 本地、Docker、SSH、Modal、Daytona |
-| 技能 | 静态技能文件 | Agent 管理的技能（创建 -> 使用 -> 编辑） |
-| API 格式 | Anthropic 原生 | OpenAI 兼容（支持 200+ 模型） |
-| 定时任务 | 会话内 cron | 持久化 cron + 时长字符串和 cron 表达式 |
-
-这些差异不是表面的 — 它们导致了根本不同的实现模式，教学章节会详细展开。
-
 ## 项目结构
 
 ```text
