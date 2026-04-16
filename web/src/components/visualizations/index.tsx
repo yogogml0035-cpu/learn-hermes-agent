@@ -13,6 +13,11 @@ const visualizations: Record<
   s04: lazy(() => import("./s04-prompt-builder")),
   s05: lazy(() => import("./s05-context-compression")),
   s06: lazy(() => import("./s06-error-recovery")),
+  s07: lazy(() => import("./s07-memory-system")),
+  s08: lazy(() => import("./s08-skill-system")),
+  s09: lazy(() => import("./s09-permission-system")),
+  s10: lazy(() => import("./s10-subagent-delegation")),
+  s11: lazy(() => import("./s11-configuration-system")),
 };
 
 export function SessionVisualization({ version }: { version: string }) {
