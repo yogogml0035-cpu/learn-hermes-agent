@@ -132,6 +132,7 @@
 | 阶段 2 | 再补智能层 — 记忆、技能、安全、委派、容错 | `s07-s11` |
 | 阶段 3 | 跨平台 — Gateway、适配器、终端后端、定时任务 | `s12-s15` |
 | 阶段 4 | 高级能力 — MCP、浏览器、语音、视觉、完整集成 | `s16-s20` |
+| 阶段 5 | 自我进化 — 技能创作、Hook、轨迹/RL、插件、技能自进化 | `s21-s25` |
 
 ## 全部章节
 
@@ -158,6 +159,13 @@
 | `s18` | Voice & Vision | TTS/STT 管道与图像分析 |
 | `s19` | CLI Interface | prompt_toolkit + Rich 交互式终端 |
 | `s20` | Full System | 所有机制组装在一起 — 完整的 Hermes Agent |
+| `s21` | Skill Creation Loop | 后台审视提取模式，自动创建可复用技能 |
+| `s22` | Hook System | 生命周期钩子，不改核心代码扩展行为 |
+| `s23` | Trajectory & RL | 对话轨迹变训练数据，强化学习改进模型 |
+| `s24` | Plugin Architecture | 可插拔的记忆、压缩、能力提供者 |
+| `s25` | Self-Evolution Overview | 核心洞察、四层进化目标、完整管线总览 |
+| `s26` | Evaluation System | 评估数据集、LLM-as-judge 打分、约束门控 |
+| `s27` | Optimization & Deploy | 收集反馈→改写→择优循环、完整管线、Phase 2-4 概念 |
 
 ## 章节总索引：每章最该盯住什么
 
@@ -190,6 +198,13 @@
 | `s18` | `tts_tool` / `voice_mode` / `vision_tools` | 语音输入输出 + 图像分析的多模态管道 |
 | `s19` | `HermesCLI` / `CommandDef` / `KawaiiSpinner` / Rich 渲染 | 一个功能完整的交互式终端界面 |
 | `s20` | 全部以上 | 所有机制组装成一个完整系统 |
+| `s21` | `BackgroundReviewer` / `_SKILL_REVIEW_PROMPT` / 触发逻辑 | 一套"发现模式→创建技能"的后台审视循环 |
+| `s22` | `HookRegistry` / `PluginHookRegistry` / BOOT.md 处理 | 生命周期钩子——不改核心代码就能注入自定义逻辑 |
+| `s23` | `convert_to_trajectory()` / `compress_trajectory()` / 奖励函数 | 对话数据→训练管线，用 RL 改进模型 |
+| `s24` | 插件接口 / 记忆提供者 / 压缩提供者 | 可插拔的记忆和压缩，不碰核心代码 |
+| `s25` | `EvalExample` / `EvalDataset` | 自进化的基础数据结构 |
+| `s26` | `SyntheticDatasetBuilder` / `FitnessScore` / `ConstraintValidator` | 度量基础设施——生成数据、打分、约束门控 |
+| `s27` | `SkillOptimizer` / `EvolutionResult` / `evolve_skill()` | 优化循环 + 完整 7 步管线 |
 
 ## 如果你是初学者，最推荐这样读
 

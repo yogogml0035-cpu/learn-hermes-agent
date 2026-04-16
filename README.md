@@ -122,12 +122,13 @@ These are not extra main chapters. They are bridge documents that make the middl
 - Platform adapter pattern: [`docs/en/s13a-platform-adapter-pattern.md`](./docs/en/s13a-platform-adapter-pattern.md)
 - Entity map: [`docs/en/entity-map.md`](./docs/en/entity-map.md)
 
-## Four Stages
+## Five Stages
 
 1. `s01-s06`: build a working single-agent core with persistence
 2. `s07-s11`: add intelligence — memory, skills, safety, delegation, and error recovery
 3. `s12-s15`: go multi-platform — gateway, adapters, terminal backends, and scheduling
 4. `s16-s20`: add advanced capabilities — MCP, browser, voice, vision, and full integration
+5. `s21-s25`: self-improvement — skill creation, hooks, trajectory/RL, plugins, and skill evolution
 
 ## Main Chapters
 
@@ -154,6 +155,13 @@ These are not extra main chapters. They are bridge documents that make the middl
 | `s18` | Voice & Vision | TTS/STT pipelines and image analysis |
 | `s19` | CLI Interface | prompt_toolkit + Rich for an interactive terminal experience |
 | `s20` | Full System | everything wired together — the complete Hermes Agent |
+| `s21` | Skill Creation Loop | background review extracts patterns into reusable skills |
+| `s22` | Hook System | lifecycle hooks for extensibility without modifying core code |
+| `s23` | Trajectory & RL | conversation trajectories become training data for model improvement |
+| `s24` | Plugin Architecture | pluggable memory, compression, and capability providers |
+| `s25` | Self-Evolution Overview | the core insight, four evolution targets, and full pipeline overview |
+| `s26` | Evaluation System | eval datasets, LLM-as-judge fitness scoring, and constraint gates |
+| `s27` | Optimization & Deploy | the feedback→mutate→select loop, full pipeline, and Phase 2-4 concepts |
 
 ## Chapter Index: What to Focus on in Each Chapter
 
@@ -185,6 +193,13 @@ If this is your first time learning this material systematically, do not spread 
 | `s18` | `tts_tool` / `voice_mode` / `vision_tools` | multimodal pipelines: voice I/O + image analysis |
 | `s19` | `HermesCLI` / `CommandDef` / `KawaiiSpinner` / Rich rendering | a fully-featured interactive terminal interface |
 | `s20` | all of the above | everything assembled into a complete system |
+| `s21` | `BackgroundReviewer` / `_SKILL_REVIEW_PROMPT` / trigger logic | a "discover patterns → create skill" background review loop |
+| `s22` | `HookRegistry` / `PluginHookRegistry` / BOOT.md handler | lifecycle hooks — inject custom logic without modifying core code |
+| `s23` | `convert_to_trajectory()` / `compress_trajectory()` / reward functions | conversation data → training pipeline for model improvement |
+| `s24` | plugin interfaces / memory providers / compression providers | pluggable memory and compression without touching core code |
+| `s25` | `EvalExample` / `EvalDataset` | the foundational data structures for self-evolution |
+| `s26` | `SyntheticDatasetBuilder` / `FitnessScore` / `ConstraintValidator` | measurement infrastructure — generate data, score outputs, gate changes |
+| `s27` | `SkillOptimizer` / `EvolutionResult` / `evolve_skill()` | the optimization loop and full 7-step pipeline |
 
 ## Reading Approaches for Beginners
 
