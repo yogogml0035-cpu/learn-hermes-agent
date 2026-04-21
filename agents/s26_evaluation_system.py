@@ -1,6 +1,8 @@
 """
 s26: Evaluation System -- How to Know If a Change Is Good
 
+See: docs/zh/s26-evaluation-system.md | docs/en/s26-evaluation-system.md
+
 Before you can improve anything, you need to measure it. This chapter builds
 the measurement infrastructure: generate test cases, score agent outputs with
 LLM-as-judge, and gate changes with hard constraints.

@@ -1,6 +1,8 @@
 """
 s06: Error Recovery -- Error Recovery and Failover
 
+See: docs/zh/s06-error-recovery.md | docs/en/s06-error-recovery.md
+
 Builds on s05 by turning raw API exceptions into actionable policy decisions:
 classify the error, then choose one of {retry w/ backoff, compress, fall back,
 give up}. Also auto-continues when the model truncates with finish_reason=length.

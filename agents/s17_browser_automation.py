@@ -1,6 +1,8 @@
 """
 s17: Browser Automation -- Web Interaction via Accessibility Tree
 
+See: docs/zh/s17-browser-automation.md | docs/en/s17-browser-automation.md
+
 Adds browser tools that let the agent navigate web pages, click elements,
 fill forms, and take screenshots. The agent "sees" pages through an
 accessibility tree (not HTML), and locates elements by semantic references

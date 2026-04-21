@@ -1,6 +1,8 @@
 """
 s14: Terminal Backends -- Execution Environment Abstraction
 
+See: docs/zh/s14-terminal-backends.md | docs/en/s14-terminal-backends.md
+
 Adds an execution environment layer between the terminal tool and the OS.
 Commands can run locally, in Docker, or via SSH -- the tool doesn't know.
 

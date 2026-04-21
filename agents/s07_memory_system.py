@@ -1,6 +1,8 @@
 """
 s07: Memory System -- Cross-Session Persistent Knowledge
 
+See: docs/zh/s07-memory-system.md | docs/en/s07-memory-system.md
+
 Builds on s06 by giving the agent a pair of Markdown memory files
 (MEMORY.md for general facts, USER.md for user-profile notes), and a
 `memory` tool for add/remove/read. The snapshot is frozen into the system

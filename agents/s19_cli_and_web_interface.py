@@ -1,6 +1,8 @@
 """
 s19: CLI & Web Interface -- Interactive Terminal and Management Dashboard
 
+See: docs/zh/s19-cli-and-web-interface.md | docs/en/s19-cli-and-web-interface.md
+
 Replaces bare input()/print() with a production-quality terminal UI and
 adds a web management panel for configuration and session browsing.
 

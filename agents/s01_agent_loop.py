@@ -1,6 +1,8 @@
 """
 s01: The Agent Loop -- Minimal Synchronous Conversation Loop
 
+See: docs/zh/s01-the-agent-loop.md | docs/en/s01-the-agent-loop.md
+
 The simplest possible agent: call model -> run tool calls -> feed results back -> repeat
 until the model stops requesting tools. Everything else in this series is layered on top.
 

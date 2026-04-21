@@ -1,6 +1,8 @@
 """
 s22: Hook System & BOOT.md -- Lifecycle Hooks for Extensibility
 
+See: docs/zh/s22-hook-system.md | docs/en/s22-hook-system.md
+
 Two hook systems let you inject custom logic at key agent lifecycle moments
 without modifying core code: Gateway hooks (event-driven, file-based) and
 Plugin hooks (callback-driven, code-registered).

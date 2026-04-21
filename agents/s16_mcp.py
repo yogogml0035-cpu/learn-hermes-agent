@@ -1,6 +1,8 @@
 """
 s16: MCP Integration -- External Tool Protocol
 
+See: docs/zh/s16-mcp.md | docs/en/s16-mcp.md
+
 Adds MCP (Model Context Protocol) support: external processes can expose
 tools that register into the same registry as built-in tools. The agent
 can't tell the difference.

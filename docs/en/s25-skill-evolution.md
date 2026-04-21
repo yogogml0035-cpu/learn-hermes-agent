@@ -1,6 +1,6 @@
 # s25: Skill Evolution Overview
 
-`s00 > s01 > ... > s23 > s24 > [ s25 ] > s26 > s27`
+`s00 > s01 > s02 > s03 > s04 > s05 > s06 > s07 > s08 > s09 > s10 > s11 > s12 > s13 > s14 > s15 > s16 > s17 > s18 > s19 > s20 > s21 > s22 > s23 > s24 > [ s25 ] > s26 > s27`
 
 > *s23 improves the model itself through training. s25-s27 take a different approach -- they leave the model untouched and only change the text it receives. Skill instructions, tool descriptions, system prompts, even tool code -- all of it is text, and all of it can be systematically optimized.*
 

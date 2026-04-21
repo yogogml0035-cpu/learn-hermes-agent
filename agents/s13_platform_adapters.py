@@ -1,6 +1,8 @@
 """
 s13: Platform Adapters -- Text Batching, Media Handling, Reconnection
 
+See: docs/zh/s13-platform-adapters.md | docs/en/s13-platform-adapters.md
+
 Builds on s12's Gateway by adding the patterns every real adapter needs:
 
   - TextBatcher         -- merges split messages (0.6s quiet period)

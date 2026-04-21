@@ -1,6 +1,6 @@
 # s19: CLI & Web Interface
 
-`s00 > s01 > s02 > s03 > s04 > s05 > s06 > s07 > s08 > s09 > s10 > s11 > s12 > s13 > s14 > s15 > s16 > s17 > s18 > [ s19 ] > s20 > s21 > s22 > s23 > s24`
+`s00 > s01 > s02 > s03 > s04 > s05 > s06 > s07 > s08 > s09 > s10 > s11 > s12 > s13 > s14 > s15 > s16 > s17 > s18 > [ s19 ] > s20 > s21 > s22 > s23 > s24 > s25 > s26 > s27`
 
 > *The agent from s01-s17 has been running in a bare `input()`/`print()` terminal. For a real user-facing experience, you need streaming output, progress feedback, slash commands -- and a web panel so you can manage it without opening a terminal.*
 

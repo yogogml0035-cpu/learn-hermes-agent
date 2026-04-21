@@ -1,6 +1,8 @@
 """
 s09: Permission System -- Dangerous Command Detection and Approval
 
+See: docs/zh/s09-permission-system.md | docs/en/s09-permission-system.md
+
 Replaces the blunt BLOCKED_COMMANDS list from earlier chapters with a
 three-layer permission flow: (1) regex match against ~15 well-known danger
 patterns; (2) user prompt with four choices — once / session / always / deny;

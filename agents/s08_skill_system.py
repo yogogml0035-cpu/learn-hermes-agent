@@ -1,6 +1,8 @@
 """
 s08: Skill System -- Agent-Managed Skills
 
+See: docs/zh/s08-skill-system.md | docs/en/s08-skill-system.md
+
 Builds on s07 with a two-step skill loading pattern. The system prompt
 carries only `name + description` for each skill (cheap); full bodies are
 fetched on demand via `skill_view` when the model decides one is relevant.

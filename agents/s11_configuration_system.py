@@ -1,6 +1,8 @@
 """
 s11: Configuration System -- YAML Config, Environment Variables, and Profiles
 
+See: docs/zh/s11-configuration-system.md | docs/en/s11-configuration-system.md
+
 Consolidates all the knobs from previous chapters into a single config.yaml
 (under HERMES_HOME), with deep merge against DEFAULT_CONFIG so the user only
 overrides what they want. .env is read first for secrets; ${VAR} in YAML

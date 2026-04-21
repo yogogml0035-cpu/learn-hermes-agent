@@ -1,6 +1,8 @@
 """
 s02: Tool System -- Self-Registering Tool Registry
 
+See: docs/zh/s02-tool-system.md | docs/en/s02-tool-system.md
+
 Builds on s01 by extracting the tool layer: each tool registers itself with a
 ToolRegistry, and the loop dispatches via name lookup. Adding a new tool is now
 a single register() call and doesn't touch the loop.

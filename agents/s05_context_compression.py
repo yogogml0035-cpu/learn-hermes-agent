@@ -1,6 +1,8 @@
 """
 s05: Context Compression -- Context Window Management
 
+See: docs/zh/s05-context-compression.md | docs/en/s05-context-compression.md
+
 Builds on s04 by adding a two-stage compressor triggered on token-estimate:
   1) Prune: replace all but the most recent tool outputs with a placeholder.
   2) Summarize: ask an LLM to condense the middle turns, keep head+tail intact.

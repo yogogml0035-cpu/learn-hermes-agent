@@ -1,6 +1,8 @@
 """
 s15: Scheduled Tasks -- Cron Jobs for Autonomous Agent Actions
 
+See: docs/zh/s15-scheduled-tasks.md | docs/en/s15-scheduled-tasks.md
+
 Adds a scheduling system so the agent can act on its own in the future.
 "30 minutes from now, check the deploy" -- the agent remembers and fires.
 

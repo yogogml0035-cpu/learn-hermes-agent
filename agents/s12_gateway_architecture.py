@@ -1,6 +1,8 @@
 """
 s12: Gateway Architecture -- Multi-Platform Message Routing
 
+See: docs/zh/s12-gateway-architecture.md | docs/en/s12-gateway-architecture.md
+
 The core loop from s01 doesn't change. This chapter adds the *entry layer*:
 a GatewayRunner that starts platform adapters, translates every inbound message
 into a uniform MessageEvent, routes it to the right session, and sends the

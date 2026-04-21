@@ -1,6 +1,8 @@
 """
 s18: Voice & Vision -- Auxiliary Models for Multimedia
 
+See: docs/zh/s18-voice-vision.md | docs/en/s18-voice-vision.md
+
 Adds vision analysis (image → text) and voice tools (TTS/STT). These use
 auxiliary models separate from the main chat model. The agent only handles
 text -- STT happens in adapters, TTS generates MEDIA tags for Gateway.

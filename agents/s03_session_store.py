@@ -1,6 +1,8 @@
 """
 s03: Session Store -- SQLite Persistence
 
+See: docs/zh/s03-session-store.md | docs/en/s03-session-store.md
+
 Builds on s02 by persisting sessions and messages to SQLite (WAL mode for
 concurrent read safety). The agent loop now hydrates history on startup and
 writes each new message; conversations survive process restarts. FTS5 gives

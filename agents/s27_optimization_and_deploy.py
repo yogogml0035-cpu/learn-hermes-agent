@@ -1,6 +1,8 @@
 """
 s27: Optimization & Deploy -- The Feedback-Mutate-Select Loop
 
+See: docs/zh/s27-optimization-and-deploy.md | docs/en/s27-optimization-and-deploy.md
+
 Assembles s26's measurement components into a working optimization pipeline.
 Given a skill + eval dataset, iteratively improve the skill text and deploy.
 

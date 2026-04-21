@@ -1,6 +1,8 @@
 """
 s21: Skill Creation Loop -- Self-Improving Agent
 
+See: docs/zh/s21-skill-creation-loop.md | docs/en/s21-skill-creation-loop.md
+
 After completing a task, the agent forks a background review that analyzes
 the conversation for reusable patterns. If found, it creates a skill file
 so next time the same problem is solved without re-discovering the approach.

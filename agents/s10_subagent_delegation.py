@@ -1,6 +1,8 @@
 """
 s10: Subagent Delegation -- Child Agent Task Delegation
 
+See: docs/zh/s10-subagent-delegation.md | docs/en/s10-subagent-delegation.md
+
 Builds on s09 with a `delegate_task` tool that spawns a child agent in an
 isolated message list. The child runs its own loop (with a smaller iteration
 budget), then returns only its final text to the parent — intermediate tool

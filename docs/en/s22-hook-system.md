@@ -1,6 +1,6 @@
 # s22: Hook System & BOOT.md
 
-`s00 > s01 > s02 > s03 > s04 > s05 > s06 > s07 > s08 > s09 > s10 > s11 > s12 > s13 > s14 > s15 > s16 > s17 > s18 > s19 > s20 > s21 > [ s22 ] > s23 > s24`
+`s00 > s01 > s02 > s03 > s04 > s05 > s06 > s07 > s08 > s09 > s10 > s11 > s12 > s13 > s14 > s15 > s16 > s17 > s18 > s19 > s20 > s21 > [ s22 ] > s23 > s24 > s25 > s26 > s27`
 
 > *By s21, the agent's core capabilities and self-evolution mechanisms are all in place. But if you want the agent to "run a self-check every time it starts" or "add an audit layer before every tool call" -- you don't need to modify core code. You just need to attach a hook.*
 

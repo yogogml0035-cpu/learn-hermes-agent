@@ -1,6 +1,8 @@
 """
 s04: Prompt Builder -- Multi-Source System Prompt Assembly
 
+See: docs/zh/s04-prompt-builder.md | docs/en/s04-prompt-builder.md
+
 Builds on s03 by replacing the hard-coded SYSTEM_PROMPT with a dynamic one
 assembled from three sources: SOUL.md (identity), MEMORY.md (long-term notes),
 and a project-level config file (AGENTS.md / CLAUDE.md / etc). Assembled once

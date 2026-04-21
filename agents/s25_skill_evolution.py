@@ -1,6 +1,8 @@
 """
 s25: Self-Evolution -- Improving Agent Capabilities Through Text Optimization
 
+See: docs/zh/s25-skill-evolution.md | docs/en/s25-skill-evolution.md
+
 Agent capabilities = model × context text quality. s23 improves the model
 (RL training). This chapter improves the context text: systematically
 optimizing skills, tool descriptions, prompts, and code WITHOUT retraining.

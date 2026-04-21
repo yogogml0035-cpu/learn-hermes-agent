@@ -1,6 +1,8 @@
 """
 s20: Background Review -- Periodic Self-Reflection for Memory and Skills
 
+See: docs/zh/s20-background-review.md | docs/en/s20-background-review.md
+
 After every N turns, the agent spawns a background thread to review the
 conversation and automatically update memory (MEMORY.md / USER.md) or
 create new skills -- without interrupting the user.

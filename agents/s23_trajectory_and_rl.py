@@ -1,6 +1,8 @@
 """
 s23: Trajectory & RL Training -- Conversation Data to Model Improvement
 
+See: docs/zh/s23-trajectory-and-rl.md | docs/en/s23-trajectory-and-rl.md
+
 Adds a trajectory collection, compression, and RL training pipeline.
 Conversations become training data that improves the next model generation.
 
