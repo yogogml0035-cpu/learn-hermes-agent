@@ -14,8 +14,14 @@ Usage:
 import json
 import os
 import subprocess
+from pathlib import Path
 
+from dotenv import load_dotenv
 from openai import OpenAI
+
+# 自动加载 .env 文件
+project_root = Path(__file__).parent.parent
+load_dotenv(project_root / ".env")
 
 
 # ===========================================================================

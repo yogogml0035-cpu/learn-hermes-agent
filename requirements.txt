@@ -1,4 +1,5 @@
 openai>=1.0
+python-dotenv>=1.0
 PyYAML>=6.0
 fastapi>=0.100
 uvicorn>=0.20
