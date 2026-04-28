@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Learn Hermes Agent",
-    "description": "20 chapters, 4 stages — build a cross-platform autonomous AI Agent from scratch"
+    "description": "27 chapters, 5 stages — build a cross-platform autonomous AI Agent from scratch"
   },
   "nav": {
     "home": "Home",
@@ -10,7 +10,7 @@
   },
   "home": {
     "hero_title": "Learn Hermes Agent",
-    "hero_subtitle": "20 chapters, 4 stages — reverse-engineer the core architecture of Hermes Agent",
+    "hero_subtitle": "27 chapters, 5 stages — reverse-engineer the core architecture of Hermes Agent",
     "start": "Start Learning",
     "learning_path": "Learning Path"
   },
@@ -43,12 +43,20 @@
     "s17": "Browser Automation",
     "s18": "Voice & Vision",
     "s19": "CLI Interface",
-    "s20": "Full System"
+    "s20": "Background Review",
+    "s21": "Skill Creation Loop",
+    "s22": "Hook System",
+    "s23": "Trajectory & RL",
+    "s24": "Plugin Architecture",
+    "s25": "Skill Evolution",
+    "s26": "Evaluation System",
+    "s27": "Optimization & Deploy"
   },
   "layer_labels": {
     "core": "Core Single-Agent",
     "smart": "Intelligence & Safety",
     "gateway": "Multi-Platform",
-    "advanced": "Advanced Capabilities"
+    "advanced": "Advanced Capabilities",
+    "evolution": "Self-Evolution"
   }
 }

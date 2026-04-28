@@ -3,6 +3,7 @@ export const VERSION_ORDER = [
   "s07", "s08", "s09", "s10", "s11",
   "s12", "s13", "s14", "s15",
   "s16", "s17", "s18", "s19", "s20",
+  "s21", "s22", "s23", "s24", "s25", "s26", "s27",
 ] as const;
 
 // s00 is the architecture overview, not a hands-on chapter.
@@ -10,7 +11,7 @@ export const VERSION_ORDER = [
 export const LEARNING_PATH = VERSION_ORDER.slice(1);
 
 export type VersionId = (typeof VERSION_ORDER)[number];
-export type LearningLayer = "core" | "smart" | "gateway" | "advanced";
+export type LearningLayer = "core" | "smart" | "gateway" | "advanced" | "evolution";
 
 export const VERSION_META: Record<
   string,
@@ -163,11 +164,60 @@ export const VERSION_META: Record<
     prevVersion: "s18",
   },
   s20: {
-    title: "Full System",
-    subtitle: "完整系统集成",
-    keyInsight: "所有机制组装在一起，就是一个完整的 Hermes Agent。",
+    title: "Background Review",
+    subtitle: "后台审视",
+    keyInsight: "后台审视让 agent 周期性反思对话，自动更新记忆并抽取可复用技能。",
     layer: "advanced",
     prevVersion: "s19",
+  },
+  s21: {
+    title: "Skill Creation Loop",
+    subtitle: "技能创作闭环",
+    keyInsight: "后台审视发现重复模式后，可以把一次性的解决方案沉淀成下次可复用的技能。",
+    layer: "evolution",
+    prevVersion: "s20",
+  },
+  s22: {
+    title: "Hook System",
+    subtitle: "生命周期 Hook",
+    keyInsight: "Hook 把启动、会话结束、工具调用等生命周期事件变成可扩展的自动化入口。",
+    layer: "evolution",
+    prevVersion: "s21",
+  },
+  s23: {
+    title: "Trajectory & RL",
+    subtitle: "轨迹与强化学习",
+    keyInsight: "对话轨迹可以被压缩、标注并转成训练数据，用来改进下一代 agent。",
+    layer: "evolution",
+    prevVersion: "s22",
+  },
+  s24: {
+    title: "Plugin Architecture",
+    subtitle: "插件架构",
+    keyInsight: "插件层把记忆 provider、Hook 和外部能力变成可插拔生态，而不是写死在核心里。",
+    layer: "evolution",
+    prevVersion: "s23",
+  },
+  s25: {
+    title: "Skill Evolution",
+    subtitle: "技能自进化",
+    keyInsight: "技能进化把数据集、评估、约束和优化循环串起来，让技能能被系统性改进。",
+    layer: "evolution",
+    prevVersion: "s24",
+  },
+  s26: {
+    title: "Evaluation System",
+    subtitle: "评估系统",
+    keyInsight: "评估系统用测试集、fitness score 和约束门禁量化一个技能到底有没有变好。",
+    layer: "evolution",
+    prevVersion: "s25",
+  },
+  s27: {
+    title: "Optimization & Deploy",
+    subtitle: "优化与部署",
+    keyInsight: "优化部署循环收集反馈、定向改写、重新评分并只保留真正更好的版本。",
+    layer: "evolution",
+    prevVersion: "s26",
   },
 };
 
@@ -195,5 +245,11 @@ export const LAYERS = [
     label: "Advanced Capabilities",
     color: "#DC2626",
     versions: ["s16", "s17", "s18", "s19", "s20"],
+  },
+  {
+    id: "evolution" as const,
+    label: "Self-Evolution",
+    color: "#7C3AED",
+    versions: ["s21", "s22", "s23", "s24", "s25", "s26", "s27"],
   },
 ] as const;

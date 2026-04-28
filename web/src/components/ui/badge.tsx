@@ -5,6 +5,7 @@ const LAYER_COLORS: Record<LearningLayer, string> = {
   smart: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300",
   gateway: "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300",
   advanced: "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300",
+  evolution: "bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300",
 };
 
 export function LayerBadge({

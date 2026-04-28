@@ -9,6 +9,7 @@ const LAYER_DOT_COLORS: Record<string, string> = {
   smart: "bg-emerald-500",
   gateway: "bg-amber-500",
   advanced: "bg-red-500",
+  evolution: "bg-violet-500",
 };
 
 export default function HomePage() {

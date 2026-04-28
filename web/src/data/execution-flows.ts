@@ -200,6 +200,22 @@ export const GENERIC_FLOWS: Record<string, FlowDefinition> = {
       { from: "browser", to: "full" },
     ],
   },
+  "s21-s27": {
+    nodes: [
+      { id: "observe", label: "Collect Trajectory", type: "start", x: COL_CENTER, y: 30 },
+      { id: "extract", label: "Extract Reusable Pattern", type: "process", x: COL_LEFT, y: 120 },
+      { id: "evaluate", label: "Evaluate Fitness", type: "decision", x: COL_CENTER, y: 220 },
+      { id: "mutate", label: "Mutate Skill", type: "subprocess", x: COL_LEFT, y: 320 },
+      { id: "deploy", label: "Deploy Better Version", type: "end", x: COL_RIGHT, y: 320 },
+    ],
+    edges: [
+      { from: "observe", to: "extract" },
+      { from: "extract", to: "evaluate" },
+      { from: "evaluate", to: "mutate", label: "needs improvement" },
+      { from: "mutate", to: "evaluate" },
+      { from: "evaluate", to: "deploy", label: "passes gates" },
+    ],
+  },
 };
 
 export function getFlowForVersion(version: string): FlowDefinition | null {
@@ -208,5 +224,6 @@ export function getFlowForVersion(version: string): FlowDefinition | null {
   if (num >= 7 && num <= 11) return GENERIC_FLOWS["s07-s11"];
   if (num >= 12 && num <= 15) return GENERIC_FLOWS["s12-s15"];
   if (num >= 16 && num <= 20) return GENERIC_FLOWS["s16-s20"];
+  if (num >= 21 && num <= 27) return GENERIC_FLOWS["s21-s27"];
   return null;
 }
