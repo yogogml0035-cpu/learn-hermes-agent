@@ -1159,6 +1159,35 @@ def _render_skill(name: str, description: str, body: str) -> str:
     return f"---\nname: {name}\ndescription: {description}\n---\n\n{body}"
 
 
+def _resolve_skill_dir(name: str) -> tuple[str, Path]:
+    """Return a validated skill name and its directory under SKILLS_DIR."""
+    if not isinstance(name, str):
+        raise ValueError("skill name must be a string")
+
+    safe_name = name.strip()
+    if not safe_name:
+        raise ValueError("skill name is required")
+    if safe_name in {".", ".."}:
+        raise ValueError("invalid skill name")
+
+    requested = Path(safe_name)
+    if requested.is_absolute() or len(requested.parts) != 1:
+        raise ValueError("skill name must not contain path separators")
+    if not safe_name[0].isalnum() or not all(
+        char.isalnum() or char in "._-" for char in safe_name
+    ):
+        raise ValueError(
+            "skill name may contain only letters, numbers, '.', '_' and '-'"
+        )
+
+    skills_root = SKILLS_DIR.resolve()
+    skill_dir = (skills_root / safe_name).resolve()
+    if skill_dir.parent != skills_root:
+        raise ValueError("skill name escapes skills directory")
+
+    return safe_name, skill_dir
+
+
 def discover_skills() -> list[dict]:
     """Scan the skills directory and return a list of skill summaries."""
     if not SKILLS_DIR.exists():
@@ -1182,7 +1211,12 @@ def discover_skills() -> list[dict]:
 
 def handle_skill_view(args, **kwargs):
     """Load and return the full content of a skill by name."""
-    skill_file = SKILLS_DIR / args.get("name", "") / "SKILL.md"
+    name = args.get("name", "")
+    try:
+        name, skill_dir = _resolve_skill_dir(name)
+    except ValueError as exc:
+        return f"(error: {exc})"
+    skill_file = skill_dir / "SKILL.md"
     if not skill_file.exists():
         return "(error: skill not found)"
 
@@ -1203,7 +1237,11 @@ def handle_skill_manage(args, **kwargs):
     if not name:
         return "(error: name required)"
 
-    skill_dir = SKILLS_DIR / name
+    try:
+        name, skill_dir = _resolve_skill_dir(name)
+    except ValueError as exc:
+        return f"(error: {exc})"
+
     skill_file = skill_dir / "SKILL.md"
 
     if action == "create":
@@ -3765,7 +3803,13 @@ def evolve_skill(
     7. 保存结果
     """
     # 1. 查找并加载 skill
-    skill_file = SKILLS_DIR / skill_name / "SKILL.md"
+    try:
+        skill_name, skill_dir = _resolve_skill_dir(skill_name)
+    except ValueError as exc:
+        print(f"  [evolve] invalid skill name: {exc}")
+        return None
+
+    skill_file = skill_dir / "SKILL.md"
     if not skill_file.exists():
         print(f"  [evolve] skill '{skill_name}' not found")
         return None
@@ -3816,7 +3860,7 @@ def evolve_skill(
 
     # 7. 保存结果（备份原始 + 写入进化版）
     if result.improvement > 0:
-        backup_dir = SKILLS_DIR / skill_name / "backups"
+        backup_dir = skill_dir / "backups"
         backup_dir.mkdir(parents=True, exist_ok=True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         (backup_dir / f"SKILL_{timestamp}.md.bak").write_text(raw, encoding="utf-8")
@@ -3961,11 +4005,12 @@ def run_unit_tests():
     result = reviewer.review(nontrivial_messages)
     assert result["action"] == "created"
     skill_name = result["skill_name"]
-    skill_file = SKILLS_DIR / skill_name / "SKILL.md"
+    _, skill_dir = _resolve_skill_dir(skill_name)
+    skill_file = skill_dir / "SKILL.md"
     assert skill_file.exists()
 
     import shutil as _shutil
-    _shutil.rmtree(SKILLS_DIR / skill_name, ignore_errors=True)
+    _shutil.rmtree(skill_dir, ignore_errors=True)
     print("  s21 reviewer ........ OK")
 
     # --- s22 tests (new) ---
