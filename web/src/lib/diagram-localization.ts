@@ -22,6 +22,13 @@ const FLOW_LABELS: Record<string, Record<SupportedLocale, string>> = {
   "Classify Error": { zh: "分类错误", en: "Classify Error" },
   "Retry / Fallback": { zh: "重试 / 转移", en: "Retry / Fallback" },
   "API Error?": { zh: "API 出错?", en: "API Error?" },
+  "Collect Trajectory": { zh: "收集轨迹", en: "Collect Trajectory" },
+  "Extract Reusable Pattern": { zh: "抽取可复用模式", en: "Extract Reusable Pattern" },
+  "Evaluate Fitness": { zh: "评估适应度", en: "Evaluate Fitness" },
+  "Mutate Skill": { zh: "改写技能", en: "Mutate Skill" },
+  "Deploy Better Version": { zh: "部署更优版本", en: "Deploy Better Version" },
+  "needs improvement": { zh: "需要改进", en: "needs improvement" },
+  "passes gates": { zh: "通过门禁", en: "passes gates" },
   "yes": { zh: "是", en: "yes" },
   "no": { zh: "否", en: "no" },
 };

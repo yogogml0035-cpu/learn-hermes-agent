@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Learn Hermes Agent",
-    "description": "20 章节、4 个阶段，从零手搓一个跨平台自主 AI Agent"
+    "description": "27 章节、5 个阶段，从零手搓一个跨平台自主 AI Agent"
   },
   "nav": {
     "home": "首页",
@@ -10,7 +10,7 @@
   },
   "home": {
     "hero_title": "Learn Hermes Agent",
-    "hero_subtitle": "20 章节、4 个阶段，还原 Hermes Agent 的核心架构与设计决策",
+    "hero_subtitle": "27 章节、5 个阶段，还原 Hermes Agent 的核心架构与设计决策",
     "start": "开始学习",
     "learning_path": "学习路径"
   },
@@ -43,12 +43,20 @@
     "s17": "浏览器自动化",
     "s18": "语音与视觉",
     "s19": "CLI 界面",
-    "s20": "完整系统"
+    "s20": "后台审视",
+    "s21": "技能创作闭环",
+    "s22": "Hook 系统",
+    "s23": "轨迹与 RL",
+    "s24": "插件架构",
+    "s25": "技能自进化",
+    "s26": "评估系统",
+    "s27": "优化与部署"
   },
   "layer_labels": {
     "core": "核心单 Agent",
     "smart": "智能与安全",
     "gateway": "跨平台",
-    "advanced": "高级能力"
+    "advanced": "高级能力",
+    "evolution": "自我进化"
   }
 }
