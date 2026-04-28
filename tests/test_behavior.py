@@ -211,6 +211,40 @@ def test_s09_allows_safe_commands(command):
 
 
 # ---------------------------------------------------------------------------
+# s08: Skill path safety
+# ---------------------------------------------------------------------------
+
+def test_s08_skill_names_stay_under_skills_dir(tmp_path, monkeypatch):
+    import agents.s08_skill_system as s08
+
+    skills_dir = tmp_path / "skills"
+    outside_dir = tmp_path / "outside"
+    outside_dir.mkdir()
+    outside_skill = outside_dir / "SKILL.md"
+    outside_skill.write_text("do not delete", encoding="utf-8")
+    monkeypatch.setattr(s08, "SKILLS_DIR", skills_dir)
+
+    created = s08.handle_skill_manage({
+        "action": "create",
+        "name": "git-workflow",
+        "description": "Git workflow",
+        "body": "Use small commits.",
+    })
+    assert "Created skill" in created
+    assert (skills_dir / "git-workflow" / "SKILL.md").exists()
+
+    for unsafe_name in ["../outside", str(outside_dir), "nested/name"]:
+        result = s08.handle_skill_manage({
+            "action": "delete",
+            "name": unsafe_name,
+        })
+        assert "error:" in result.lower()
+
+    assert outside_dir.exists()
+    assert outside_skill.read_text(encoding="utf-8") == "do not delete"
+
+
+# ---------------------------------------------------------------------------
 # s15: Schedule Parser
 # ---------------------------------------------------------------------------
 
