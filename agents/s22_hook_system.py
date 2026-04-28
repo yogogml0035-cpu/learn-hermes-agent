@@ -2103,8 +2103,9 @@ class GatewayRunner:
             if not existing:
                 # 首次对话，创建 session（用 session_key 作为 id）
                 conn.execute(
-                    "INSERT OR IGNORE INTO sessions (id, created_at) VALUES (?, ?)",
-                    (session_key, datetime.now().isoformat()),
+                    "INSERT OR IGNORE INTO sessions (id, source, started_at) "
+                    "VALUES (?, ?, ?)",
+                    (session_key, "gateway", time.time()),
                 )
                 conn.commit()
 

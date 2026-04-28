@@ -2136,8 +2136,9 @@ class GatewayRunner:
             if not existing:
                 # 首次对话，创建 session（用 session_key 作为 id）
                 conn.execute(
-                    "INSERT OR IGNORE INTO sessions (id, created_at) VALUES (?, ?)",
-                    (session_key, datetime.now().isoformat()),
+                    "INSERT OR IGNORE INTO sessions (id, source, started_at) "
+                    "VALUES (?, ?, ?)",
+                    (session_key, "gateway", time.time()),
                 )
                 conn.commit()
 
@@ -2910,7 +2911,7 @@ def create_web_app():
         conn = init_db(DB_PATH)
         try:
             rows = conn.execute(
-                "SELECT id, created_at FROM sessions ORDER BY created_at DESC "
+                "SELECT id, started_at FROM sessions ORDER BY started_at DESC "
                 "LIMIT ? OFFSET ?",
                 (limit, offset),
             ).fetchall()
