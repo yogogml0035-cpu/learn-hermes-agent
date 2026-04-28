@@ -14,6 +14,7 @@ Covers:
 
 from __future__ import annotations
 
+import asyncio
 import time
 from types import SimpleNamespace
 
@@ -278,3 +279,50 @@ def test_s15_parse_cron_expression_is_recurring():
 
     assert one_shot is False
     assert timestamp > time.time(), "next cron fire must be in the future"
+
+
+# ---------------------------------------------------------------------------
+# s12: Gateway session schema contract
+# ---------------------------------------------------------------------------
+
+def test_s12_gateway_initializes_sessions_with_started_at(tmp_path, monkeypatch):
+    import agents.s12_gateway_architecture as s12
+
+    db_path = tmp_path / "gateway.db"
+
+    monkeypatch.setattr(
+        s12,
+        "build_system_prompt",
+        lambda cwd: "test prompt",
+    )
+    monkeypatch.setattr(
+        s12,
+        "run_conversation",
+        lambda message, conn, session_id, prompt: {"final_response": "ok"},
+    )
+
+    runner = s12.GatewayRunner({"gateway": {"agent_name": "main"}}, str(db_path))
+    source = s12.SessionSource(
+        platform="console",
+        chat_id="chat-1",
+        chat_type="dm",
+        user_id="user-1",
+    )
+    event = s12.MessageEvent(message_id="m1", text="hello", source=source)
+    session_key = s12.build_session_key(source, "main")
+
+    result = asyncio.run(runner._run_agent(event, session_key))
+
+    assert result == "ok"
+    conn = s12.init_db(str(db_path))
+    try:
+        row = conn.execute(
+            "SELECT source, started_at FROM sessions WHERE id = ?",
+            (session_key,),
+        ).fetchone()
+    finally:
+        conn.close()
+
+    assert row is not None
+    assert row[0] == "gateway"
+    assert isinstance(row[1], float)
